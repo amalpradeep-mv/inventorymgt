@@ -1,17 +1,18 @@
-package customer;
+package com.customer.entities;
 
 public class Customer {
 	private String name;
 	private String id;
 	private Account account;
-	
+
 	public Customer(String name, String id) {
 		this.name = name;
 		this.id = id;
 	}
+
 	public Customer(String name, String id, Account account) {
-		this(name,id);
-		this.account=account;
+		this(name, id);
+		this.account = account;
 	}
 
 	public String getName() {
@@ -30,10 +31,6 @@ public class Customer {
 		this.id = id;
 	}
 
-	public static void main(String args[]) {
-		System.out.println("hello");
-	}
-
 	public Account getAccount() {
 		return account;
 	}
@@ -41,5 +38,5 @@ public class Customer {
 	public void setAccount(Account account) {
 		this.account = account;
 	}
-	
+
 }

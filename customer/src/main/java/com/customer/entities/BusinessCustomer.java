@@ -1,11 +1,11 @@
-package customer;
+package com.customer.entities;
 
 public class BusinessCustomer extends Customer {
-private String BusinessAddress;
-	
+	private String BusinessAddress;
+
 	public BusinessCustomer(String name, String id, String BusinessAddress, Account account) {
-		super(name,id,account);
-		this.BusinessAddress=BusinessAddress;
+		super(name, id, account);
+		this.BusinessAddress = BusinessAddress;
 	}
 
 	public String getBusinessAddress() {
