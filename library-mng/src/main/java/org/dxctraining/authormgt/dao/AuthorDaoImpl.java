@@ -3,19 +3,18 @@ package org.dxctraining.authormgt.dao;
 import org.dxctraining.authormgt.entities.*;
 import org.dxctraining.authormgt.exception.*;
 
-
 import java.util.*;
 
 public class AuthorDaoImpl implements IAuthorDao {
 
 	private Map<String, Author> info = new HashMap<>();
 
-	private int generatedId;
+	private int generateId;
 
 	String generateId() {
-		generatedId++;
-		String isStr = "" + generateId();
-		return isStr;
+		generateId++;
+		String idStr = "" + generateId();
+		return idStr;
 	}
 
 	@Override

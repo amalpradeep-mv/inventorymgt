@@ -1,6 +1,5 @@
 package com.customer.ui;
 
-import com.customer.dao.*;
 import com.customer.entities.*;
 import com.customer.exceptions.*;
 import com.customer.service.*;
@@ -59,7 +58,7 @@ public class CustomerUi {
 		System.out.println("Name : " + customer.getName() + "Id : " + customer.getId() + "\n");
 
 		Account account = customer.getAccount();
-		System.out.println("Balance is " + account.getBalance() + "Panacard number is " + account.getPancard() + "\n");
+		System.out.println("Balance is " + account.getBalance() + "Pancard number is " + account.getPancard() + "\n");
 
 		if (customer instanceof RegularCustomer) {
 			RegularCustomer regCus = (RegularCustomer) customer;
