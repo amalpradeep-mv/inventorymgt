@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.dxctraining.bookmgt.dao.*;
 import org.dxctraining.bookmgt.entities.*;
+import org.dxctraining.bookmgt.exception.InvalidArgumentException;
 
 public class BookServiceImpl implements IBookService {
 
@@ -22,9 +23,9 @@ public class BookServiceImpl implements IBookService {
 
 	@Override
 	public Book updateName(String id, String name) {
-		Book book = dao.findById(id);
-		dao.updateBook(id, name);
-		return book;
+		validateId(id);
+		validateName(name);
+		return null;
 	}
 
 	@Override
@@ -35,8 +36,20 @@ public class BookServiceImpl implements IBookService {
 
 	@Override
 	public List<Book> findAll() {
-		List<Book>list=dao.findAll();
+		List<Book> list = dao.findAll();
 		return list;
+	}
+
+	public void validateName(String name) {
+		if (name.equals(null) || name.isEmpty()) {
+			throw new InvalidArgumentException(" Name cannot be empty");
+		}
+	}
+
+	public void validateId(String id) {
+		if (id.equals(null) || id.isEmpty()) {
+			throw new InvalidArgumentException("Id cannot be empty");
+		}
 	}
 
 }

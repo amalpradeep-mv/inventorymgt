@@ -2,6 +2,8 @@ package org.dxctraining.authormgt.service;
 
 import org.dxctraining.authormgt.dao.*;
 import org.dxctraining.authormgt.entities.*;
+import org.dxctraining.authormgt.exception.InvalidArgumentException;
+
 import java.util.*;
 
 public class AuthorServiceImpl implements IAuthorService {
@@ -20,9 +22,9 @@ public class AuthorServiceImpl implements IAuthorService {
 
 	@Override
 	public Author updateName(String id, String name) {
-		Author author = findById(id);
-		dao.updateName(id, name);
-		return author;
+		validateId(id);
+		validateName(name);
+		return null;
 	}
 
 	@Override
@@ -37,4 +39,16 @@ public class AuthorServiceImpl implements IAuthorService {
 		return list;
 	}
 
+	public void validateName(String name) {
+		if (name.equals(null) || name.isEmpty()) {
+			throw new InvalidArgumentException("Name cannot be empty");
+		}
+	}
+
+	public void validateId(String id) {
+		if (id.equals(null) || id.isEmpty()) {
+			throw new InvalidArgumentException("Id cannot be null");
+		}
+
+	}
 }

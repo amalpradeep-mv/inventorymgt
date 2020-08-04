@@ -15,5 +15,5 @@ public interface IAuthorService {
 	Author findById(String id);
 
 	List<Author> findAll();
-	
+
 }
