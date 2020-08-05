@@ -41,13 +41,13 @@ public class BookServiceImpl implements IBookService {
 	}
 
 	public void validateName(String name) {
-		if (name.equals(null) || name.isEmpty()) {
+		if (name==null|| name.isEmpty()) {
 			throw new InvalidArgumentException(" Name cannot be empty");
 		}
 	}
 
 	public void validateId(String id) {
-		if (id.equals(null) || id.isEmpty()) {
+		if (id==null || id.isEmpty()) {
 			throw new InvalidArgumentException("Id cannot be empty");
 		}
 	}
