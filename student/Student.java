@@ -27,19 +27,22 @@ public class Student {
 
 	@Override
 	public int hashCode() {
-		return age;
+		int hash = rollno.hashCode();
+		return hash;
 	}
+	/*
+	 * s1=new Student("1",21); s2=new Student("1",21; boolean equals=s1.equals(s2);
+	 */
 
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
-		}
-		if (obj == null || !(obj instanceof Student)) {
+		} else if (obj == null || !(obj instanceof Student)) {
 			return false;
 		}
-		Student that=(Student) obj;
-		boolean isequal=this.age==that.age;
+		Student that = (Student) obj;
+		boolean isequal = this.rollno.equals(that.rollno);
 		return isequal;
 
 	}
