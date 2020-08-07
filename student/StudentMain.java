@@ -7,6 +7,7 @@ public class StudentMain {
 	public static void main(String args[]) {
 		StudentMain stud = new StudentMain();
 		stud.StudentUi();
+	
 	}
 
 	public void StudentUi() {
@@ -21,8 +22,8 @@ public class StudentMain {
 		student.add(s3);
 		student.add(s4);
 		display(student);
-	}
-
+	 }
+ 
 	public void display(Student student) {
 		List<Student> age = new ArrayList<Student>();
 		for (Student studnet : age)
