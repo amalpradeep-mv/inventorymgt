@@ -2,19 +2,19 @@ package traineeassignment;
 
 public class CSTrainee extends Trainee{
 
-		private String language;
+		private int language;
 		
-	public CSTrainee(String name, int id, String language) {
+	public CSTrainee(String name, int id, int language) {
 		super(name, id);
 		this.language=language;
 	}
 	
-	public String getLanguage() {
+	public int getLanguage() {
 		return language;
 	}
 
 	
-	public void setLanguage(String language) {
+	public void setLanguage(int language) {
 		this.language = language;
 	}
 	

@@ -14,9 +14,9 @@ public class TraineeUi {
 	}
 
 	public void runUi() {
-		Trainee cs1 = new CSTrainee("Sam", 2, "Java");
+		Trainee cs1 = new CSTrainee("Sam", 2, 5);
 		map.put(cs1.getId(), cs1);
-		Trainee cs2 = new CSTrainee("Krish", 3, "Python");
+		Trainee cs2 = new CSTrainee("Krish", 3, 7);
 		map.put(cs2.getId(), cs2);
 		Trainee ece1 = new ECETrainee("Dev", 4, "Multimeter");
 		map.put(ece1.getId(), ece1);
