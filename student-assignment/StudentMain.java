@@ -3,6 +3,8 @@ package student.assignment;
 import java.util.*;
 
 public class StudentMain {
+	Set<Student> set1 = new HashSet<>();
+	Set<Student> set2 = new HashSet<>();
 
 	public static void main(String args[]) {
 		StudentMain main = new StudentMain();
@@ -25,23 +27,33 @@ public class StudentMain {
 
 	public void display() {
 		List<Student> list = new ArrayList<>();
-		for(Student stud:list) {
-			System.out.println("Name : "+stud.getName()+"Rollno : "+stud.getRollno()+"Age is "+stud.getAge());
+		for (Student stud : list) {
+			System.out.println(stud);
 		}
-
+		System.out.println("****Even age****");
+		for (Student student : set1) {
+			System.out.println("Rollno : " + student.getRollno() + "Age is " + student.getAge());
+		}
+		System.out.println("****Even age****");
+		for (Student student : set2) {
+			System.out.println("Rollno : " + student.getRollno() + "Age is " + student.getAge());
+		}
 	}
 
 	public Set<Student> toSet(Map<String, Student> map) {
-		Set<Student> set1 = new HashSet<>();
-		Set<Student> set2 = new HashSet<>();
-		for (Student number : set1)
-			if (number.getAge() % 2 == 0) {
-				set1.add(number);
+
+		Set<String> keys = map.keySet();
+		for (String number : keys) {
+			Student fetched = map.get(number);
+			if (fetched.getAge() % 2 == 0) {
+				set1.add(fetched);
 				return set1;
-			} else if (number.getAge() % 2 != 0) {
-				set2.add(number);
+			} else if (fetched.getAge() % 2 != 0) {
+				set2.add(fetched);
 			}
+			display();
+
+		}
 		return set2;
 	}
-
 }

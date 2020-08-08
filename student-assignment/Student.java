@@ -1,9 +1,5 @@
 package student.assignment;
 
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
 public class Student {
 	private String rollno;
 	private String name;
@@ -65,5 +61,3 @@ public class Student {
 	}
 
 }
-
-
