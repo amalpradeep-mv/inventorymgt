@@ -25,10 +25,9 @@ public class Trainee {
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public int hashCode(int id) {
-		int hash = hashCode(id);
-		return hash;
+@Override
+	public int hashCode() {
+		return id;
 	}
 
 	public boolean equals(Object obj) {
