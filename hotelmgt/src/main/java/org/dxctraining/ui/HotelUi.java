@@ -25,6 +25,12 @@ public class HotelUi {
 			service.register(guest2);
 			service.register(guest3);
 			service.register(guest4);
+			
+			RoyalGuest royalGuest1 = new RoyalGuest("Amal", "TF7", "Chennai");
+			RoyalGuest royalGuest2 = new RoyalGuest("Kalam", "YU2", "Chennai");
+			service.register(royalGuest1);
+			service.register(royalGuest2);
+
 		} catch (InvalidArgumentException e) {
 			e.printStackTrace();
 		} catch (GuestNotFoundException e) {
@@ -43,6 +49,12 @@ public class HotelUi {
 
 	public void display(Guest guest) {
 		System.out.println("----Guest Details----");
-	System.out.println("Name is "+guest.getName()+"Id is "+guest.getId()+"\n");
+		System.out.println("Name is " + guest.getName() + "Id is " + guest.getId() + "\n");
+
+		if (guest instanceof RoyalGuest) {
+			RoyalGuest royal = (RoyalGuest) guest;
+			System.out.println("----Royal Guests----");
+			System.out.println("Name is " + royal.getName() + " Id is " + royal.getId() + " Address is " + royal.getAddress());
+		}
 	}
 }
