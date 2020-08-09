@@ -7,15 +7,15 @@ import org.dxctraining.exception.*;
 
 public class HotelDaoImpl implements IHotelDao {
 
-		private int generatedId;
-		
-		 int generateId() {
-			 generatedId++;
-		String isId=""+generateId();
-			return generatedId;
-			
-		}
-		
+	private int generatedId;
+
+	int generateId() {
+		generatedId++;
+		String isId = "" + generateId();
+		return generatedId;
+
+	}
+
 	Map<String, Guest> map = new HashMap<>();
 
 	@Override
@@ -28,7 +28,17 @@ public class HotelDaoImpl implements IHotelDao {
 	}
 
 	@Override
-	public  void remove(String id) {
+	public List<Guest> findAll() {
+		Collection<Guest> collection = map.values();
+		List<Guest> list = new ArrayList<>();
+		for (Guest guest : list) {
+			list.add(guest);
+		}
+		return list;
+	}
+
+	@Override
+	public void remove(String id) {
 		map.remove(id);
 
 	}
@@ -38,7 +48,6 @@ public class HotelDaoImpl implements IHotelDao {
 		String name = guest.getName();
 		String id = guest.getId();
 		map.put(id, guest);
-		map.get(id);
 
 	}
 

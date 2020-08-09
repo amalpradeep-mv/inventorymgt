@@ -15,5 +15,7 @@ public interface IHotelDao {
 	
 	public Guest updateGuest(String newName, String id);
 
+	public List<Guest> findAll();
+
 	
 }

@@ -10,13 +10,15 @@ public class HotelServiceImpl implements IHotelService {
 
 	private IHotelDao dao = new HotelDaoImpl();
 
-	public void checkId(String id) {
+	@Override
+	public void validateId(String id) {
 		if (id == null || id.isEmpty()) {
 			throw new InvalidArgumentException("Id cannot be negative");
 		}
 	}
 
-	public void checkName(String name) {
+	@Override
+	public void validateName(String name) {
 		if (name == null || name.isEmpty()) {
 			throw new InvalidArgumentException("Name cannot be empty");
 		}
@@ -24,33 +26,38 @@ public class HotelServiceImpl implements IHotelService {
 
 	@Override
 	public Guest findById(String id) {
-		checkId(id);
-		Guest guest=dao.findById(id);
+		validateId(id);
+		Guest guest = dao.findById(id);
 		return guest;
 	}
 
 	@Override
-	public  void remove(String id) {
-		checkId(id);
+	public List<Guest> findAll() {
+		List<Guest> list = dao.findAll();
+		return list;
+
+	}
+
+	@Override
+	public void remove(String id) {
+		validateId(id);
 		dao.remove(id);
-}
+	}
 
 	@Override
 	public List<Guest> guestList() {
-		List<Guest> list=dao.findById(id);
+		List<Guest> list = dao.findAll();
 		return list;
 	}
-	
+
 	public void register(Guest guest) {
-		checkName(name);
-		checkId(id);
 		dao.register(guest);
 	}
 
 	@Override
 	public Guest updateGuest(String newName, String id) {
-		checkName(newName);
-		checkId(id);
+		validateName(newName);
+		validateId(id);
 		return null;
 	}
 

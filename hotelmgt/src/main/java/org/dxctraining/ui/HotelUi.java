@@ -34,7 +34,7 @@ public class HotelUi {
 	}
 
 	public void displayAll() {
-		List<Guest> list = service.findById(id);
+		List<Guest> list = service.findAll();
 		for (Guest guest : list) {
 			list.add(guest);
 			display(guest);
