@@ -21,7 +21,7 @@ public class AuthorDaoImpl implements IAuthorDao {
 	public void add(Author author) {
 		String id = generateId();
 		info.put(id, author);
-		author.getId();
+		author.setId(id);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class AuthorDaoImpl implements IAuthorDao {
 	public Author updateName(String id, String name) {
 		Author author = findById(id);
 		author.setName(name);
-		return null;
+		return author;
 	}
 
 	@Override

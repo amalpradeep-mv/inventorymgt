@@ -41,7 +41,7 @@ public class BookDaoImpl implements IBookDao {
 	public void add(Book book) {
 		String id = generateId();
 		store.put(id, book);
-		book.getId();
+		book.setId(id);;
 	}
 
 	@Override
@@ -52,6 +52,7 @@ public class BookDaoImpl implements IBookDao {
 	@Override
 	public Book updateBook(String id, String name) {
 		Book book = findById(id);
+		book.setId(id);
 		book.setName(name);
 		return book;
 	}

@@ -13,7 +13,7 @@ public class Book {
 		this.id = id;
 		this.author = author;
 	}
-	
+
 	public String getId() {
 		return id;
 	}
@@ -37,18 +37,20 @@ public class Book {
 	public void setAuthor(Author author) {
 		this.author = author;
 	}
+
 	public int hashCode() {
-		int hashCode=id.hashCode();
+		int hashCode = id.hashCode();
 		return hashCode;
 	}
+
 	public boolean equals(Object arg) {
-		if(this== arg) {
+		if (this == arg) {
 			return true;
-		} else if((null == arg) || !(arg instanceof Book)) {
+		} else if ((null == arg) || !(arg instanceof Book)) {
 			return false;
 		}
-		Book that=(Book) arg;
-		boolean isequals=this.id.equals(that.id);
+		Book that = (Book) arg;
+		boolean isequals = this.id.equals(that.id);
 		return isequals;
 	}
 }

@@ -29,4 +29,19 @@ public class ProgrammingBook extends Book {
 		this.version = version;
 	}
 
+	public double hashcode() {
+		return version;
+	}
+
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		} else if (obj == null || obj instanceof ProgrammingBook) {
+			return false;
+		}
+		ProgrammingBook that = (ProgrammingBook) obj;
+		boolean isequals = this.language.equals(that.language);
+		return isequals;
+	}
+
 }

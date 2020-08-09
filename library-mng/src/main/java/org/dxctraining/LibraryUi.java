@@ -11,8 +11,8 @@ import java.util.*;
 
 public class LibraryUi {
 
-	public IAuthorService authorService = new AuthorServiceImpl();
-	public IBookService bookService = new BookServiceImpl();
+	private IAuthorService authorService = new AuthorServiceImpl();
+	private IBookService bookService = new BookServiceImpl();
 
 	public static void main(String args[]) {
 		LibraryUi ui = new LibraryUi();
@@ -37,8 +37,11 @@ public class LibraryUi {
 			bookService.add(book2);
 			String id2 = book2.getId();
 
-			EngineeringBook engineerBook = new EngineeringBook("Eng.Book", "EF4", author3, "IC Engine","Fluid Mechanics");
+			EngineeringBook engineerBook = new EngineeringBook("Eng.Book", "EF4", author3, "IC Engine",
+					"Fluid Mechanics");
 			ProgrammingBook programBook = new ProgrammingBook("IT book", "LG5", author4, "Complete reference", 2.2);
+			bookService.add(engineerBook);
+			bookService.add(programBook);
 
 		} catch (InvalidArgumentException e) {
 			e.printStackTrace();
@@ -74,7 +77,8 @@ public class LibraryUi {
 		}
 		if (book instanceof ProgrammingBook) {
 			ProgrammingBook progBook = (ProgrammingBook) book;
-			System.out.println("Complete refernce is Java"+progBook.getLanguage()+"Version is "+progBook.getVersion());
+			System.out.println(
+					"Complete refernce is Java" + progBook.getLanguage() + "Version is " + progBook.getVersion());
 		}
 	}
 

@@ -8,7 +8,7 @@ import java.util.*;
 
 public class AuthorServiceImpl implements IAuthorService {
 
-	public IAuthorDao dao = new AuthorDaoImpl();
+	private IAuthorDao dao = new AuthorDaoImpl();
 
 	@Override
 	public void add(Author author) {
@@ -17,6 +17,7 @@ public class AuthorServiceImpl implements IAuthorService {
 
 	@Override
 	public void remove(String id) {
+		validateId(id);
 		dao.remove(id);
 	}
 
@@ -29,11 +30,11 @@ public class AuthorServiceImpl implements IAuthorService {
 
 	@Override
 	public Author findById(String id) {
+		validateId(id);
 		Author author = dao.findById(id);
 		return author;
 	}
-
-	@Override
+@Override
 	public List<Author> findAll() {
 		List<Author> list = dao.findAll();
 		return list;

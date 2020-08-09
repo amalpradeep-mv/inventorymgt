@@ -25,18 +25,20 @@ public class Author {
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public int hashCode() {
-		int hashCode=id.hashCode();
+		int hashCode = id.hashCode();
 		return hashCode;
 	}
+
 	public boolean equals(Object arg) {
-		if(this== arg) {
+		if (this == arg) {
 			return true;
-		} else if((null == arg) || !(arg instanceof Author)) {
+		} else if ((null == arg) || !(arg instanceof Author)) {
 			return false;
 		}
-		Author that=(Author) arg;
-		boolean isequals=this.id.equals(that.id);
+		Author that = (Author) arg;
+		boolean isequals = this.id.equals(that.id);
 		return isequals;
 	}
 }
