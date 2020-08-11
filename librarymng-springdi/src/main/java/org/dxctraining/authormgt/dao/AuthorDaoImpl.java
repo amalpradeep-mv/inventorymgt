@@ -2,11 +2,9 @@ package org.dxctraining.authormgt.dao;
 
 import org.dxctraining.authormgt.entities.*;
 import org.dxctraining.authormgt.exception.*;
-import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository
 public class AuthorDaoImpl implements IAuthorDao {
 
 	private Map<String, Author> info = new HashMap<>();

@@ -3,16 +3,12 @@ package org.dxctraining.authormgt.service;
 import org.dxctraining.authormgt.dao.*;
 import org.dxctraining.authormgt.entities.*;
 import org.dxctraining.authormgt.exception.InvalidArgumentException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-@Service
 public class AuthorServiceImpl implements IAuthorService {
-	
-	@Autowired
-	private IAuthorDao dao ;
+
+	private IAuthorDao dao = new AuthorDaoImpl();
 
 	@Override
 	public void add(Author author) {

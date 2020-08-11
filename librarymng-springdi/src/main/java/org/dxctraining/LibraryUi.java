@@ -7,22 +7,18 @@ import org.dxctraining.bookmgt.entities.*;
 import org.dxctraining.bookmgt.exception.*;
 import org.dxctraining.bookmgt.exception.InvalidArgumentException;
 import org.dxctraining.bookmgt.service.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import java.util.*;
 
-import javax.annotation.PostConstruct;
-
-@Component
 public class LibraryUi {
 
-	@Autowired
-	private IAuthorService authorService ;
-	@Autowired
-	private IBookService bookService ;
+	private IAuthorService authorService = new AuthorServiceImpl();
+	private IBookService bookService = new BookServiceImpl();
 
-	@PostConstruct
+	public static void main(String args[]) {
+		LibraryUi ui = new LibraryUi();
+		ui.runUi();
+	}
+
 	public void runUi() {
 		try {
 			Author author1 = new Author("John", "AD1");
