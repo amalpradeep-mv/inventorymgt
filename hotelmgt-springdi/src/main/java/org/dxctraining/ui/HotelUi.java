@@ -8,11 +8,12 @@ import org.dxctraining.exception.*;
 import org.dxctraining.service.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 @Service
 public class HotelUi {
-
+	@Autowired
 	private IHotelService service ;
 
 	public static void main (String args[]) {
