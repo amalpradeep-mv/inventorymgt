@@ -2,7 +2,7 @@ package com.dxctraining.ui;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.dxctraining.config.JavaConfig;
+import com.dxctraining.JavaConfig;
 
 public class ItemMain {
 

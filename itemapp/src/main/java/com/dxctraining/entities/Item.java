@@ -1,7 +1,16 @@
 package com.dxctraining.entities;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.*;
+
+
+
+@Entity
+@Table(name="item")
 public class Item {
 
+	@GeneratedValue
+	@Id
 	private int id;
 	private String name;
 	
