@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.dxctraining.config.JavaConfig;
 
 public class ItemMain {
+
 	
 	public static void main(String args[]) {
 		AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext();
