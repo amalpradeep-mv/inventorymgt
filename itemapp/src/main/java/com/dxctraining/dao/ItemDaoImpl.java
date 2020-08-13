@@ -17,7 +17,7 @@ public class ItemDaoImpl implements IItemDao {
 	public Item findItemById(int id) {
 		Item item = entityManager.find(Item.class, id);
 		if (item == null) {
-			throw new ItemNotFoundException("Employee not found for the id= " + id);
+			throw new ItemNotFoundException("Item not found for the id= " + id);
 		}
 		return item;
 	}

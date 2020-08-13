@@ -4,7 +4,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.*;
 
 
-
 @Entity
 @Table(name="item")
 public class Item {
