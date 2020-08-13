@@ -11,11 +11,11 @@ import com.dxctraining.exceptions.ItemNotFoundException;
 public class ItemDaoImpl implements IItemDao {
 
 	@PersistenceContext // this is equivalent to @Autowired
-	private EntityManager entityManager;
+	private EntityManager em;
 
 	@Override
 	public Item findItemById(int id) {
-		Item item = entityManager.find(Item.class, id);
+		Item item = em.find(Item.class, id);
 		if (item == null) {
 			throw new ItemNotFoundException("Item not found for the id= " + id);
 		}
@@ -24,20 +24,20 @@ public class ItemDaoImpl implements IItemDao {
 
 	@Override
 	public Item update(Item item) {
-		item = entityManager.merge(item);
+		item = em.merge(item);
 		return item;
 	}
 
 	@Override
 	public Item save(Item item) {
-		entityManager.persist(item);
+		em.persist(item);
 		return item;
 	}
 
 	@Override
 	public void remove(int id) {
-		Item item = entityManager.find(Item.class, id);
-		entityManager.remove(item);
+		Item item = em.find(Item.class, id);
+		em.remove(item);
 	}
 
 
