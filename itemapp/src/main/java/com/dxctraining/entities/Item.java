@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name="item")
+//@Table(name="item")
 public class Item {
 
 	@GeneratedValue
@@ -15,6 +15,9 @@ public class Item {
 	
 	public Item() {
 
+	}
+	public Item(String name) {
+		this.name=name;
 	}
 
 	public Item(String name, int id) {

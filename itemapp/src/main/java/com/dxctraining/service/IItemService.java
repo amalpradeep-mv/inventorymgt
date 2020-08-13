@@ -3,6 +3,7 @@ package com.dxctraining.service;
 import com.dxctraining.entities.Item;
 
 public interface IItemService {
+	
 	Item findItemById(int id);
 
 	Item update(Item item);
