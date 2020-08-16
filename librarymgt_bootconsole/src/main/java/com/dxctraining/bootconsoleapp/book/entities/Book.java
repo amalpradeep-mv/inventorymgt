@@ -3,16 +3,21 @@ package com.dxctraining.bootconsoleapp.book.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import com.dxctraining.bootconsoleapp.author.entities.Author;
 
 @Entity
+@Table(name="book_details")
 public class Book {
 
 	@Id
 	@GeneratedValue
 	private int id;
 	private String name;
+	
+	@ManyToOne
 	private Author author;
 
 	public Book(String name, Author author) {
