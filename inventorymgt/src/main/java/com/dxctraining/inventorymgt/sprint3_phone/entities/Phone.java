@@ -1,19 +1,23 @@
 package com.dxctraining.inventorymgt.sprint3_phone.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import com.dxctraining.inventorymgt.sprint1_supplier.entities.Supplier;
 import com.dxctraining.inventorymgt.sprint2_item.entities.Item;
 
 @Entity
+@Table(name="phone_details")
 public class Phone extends Item {
 
 	private int storageSize;
-
-	public Phone() {}
 	
-	public Phone(String name, Supplier supplier, int storageSize) {
-		super(name, supplier);
-		this.storageSize = storageSize;
+	public Phone() {}
+
+	public Phone(String name,Supplier supplier, int storageSize) {
+		super(name,supplier);
+		this.storageSize=storageSize;
+		
 	}
 	
 	public int getStorageSize() {
@@ -32,7 +36,7 @@ public class Phone extends Item {
 		if (this == obj) {
 			return true;
 		}
-		if (obj == null || obj instanceof Item) {
+		if (obj == null || getClass() != obj.getClass() ) {
 			return false;
 		}
 		Phone that = (Phone) obj;

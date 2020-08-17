@@ -24,31 +24,8 @@ public class ItemDaoImpl implements IItemDao {
 	}
 
 	@Override
-	public Item update(Item item) {
-		em.merge(item);
-		return item;
-	}
-
-	@Override
 	public Item findItemById(int id) {
 		Item item = em.find(Item.class, id);
-		if (id == 0) {
-			throw new InvalidArgumentException("Id is null");
-		}
-		return item;
-	}
-
-	@Override
-	public Item findItemByName(String iname) {
-		String jpaQuery = "from Item where name=:iname";
-		Query query = em.createQuery(jpaQuery);
-		query.setParameter("iname", iname);
-		List<Item> list = query.getResultList();
-		Item item = null;
-		if (!list.isEmpty()) {
-			item = list.get(0);
-
-		}
 		return item;
 	}
 

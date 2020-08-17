@@ -6,11 +6,7 @@ public interface IItemDao {
 	
 	Item save(Item item);
 
-	Item update(Item item);
-
 	Item findItemById(int id);
-
-	Item findItemByName(String iname);
 	
 	Item remove(int id);
 }

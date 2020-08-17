@@ -4,17 +4,11 @@ import com.dxctraining.inventorymgt.sprint2_item.entities.Item;
 
 public interface IItemService {
 
-	void validate(Item item);
-	
-	void validate(int id);
+	void validate(Object arg);
 	
 	Item save(Item item);
 
-	Item update(Item item);
-
 	Item findItemById(int id);
-
-	Item findItemByName(String iname);
 	
 	Item remove(int id);
 }

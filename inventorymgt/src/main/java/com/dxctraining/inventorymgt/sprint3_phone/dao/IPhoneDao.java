@@ -6,11 +6,7 @@ public interface IPhoneDao {
 
 	Phone save(Phone phone);
 
-	Phone update(Phone phone);
-
 	Phone findPhoneById(int id);
-
-	Phone findPhoneByName(String pname);
 
 	Phone remove(int id);
 }

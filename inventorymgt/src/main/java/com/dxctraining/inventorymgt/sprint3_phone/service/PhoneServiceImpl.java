@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.dxctraining.inventorymgt.sprint3_phone.dao.IPhoneDao;
 import com.dxctraining.inventorymgt.sprint3_phone.entities.Phone;
 import com.dxctraining.inventorymgt.sprint3_phone.exception.InvalidArgumentException;
-import com.dxctraining.inventorymgt.sprint3_phone.exception.PhoneNotFoundException;
 
 @Transactional
 @Service
@@ -17,18 +16,12 @@ public class PhoneServiceImpl implements IPhoneService {
 	private IPhoneDao phoneDao;
 
 	@Override
-	public void validate(int id) {
-		if (id == 0) {
-			throw new InvalidArgumentException("Id is not found");
+	public void validate(Object arg) {
+		if (arg == null) {
+			throw new InvalidArgumentException("Argument is null");
 		}
 	}
 
-	@Override
-	public void validate(Phone phone) {
-		if (phone == null) {
-			throw new PhoneNotFoundException("Phone not found");
-		}
-	}
 
 	@Override
 	public Phone save(Phone phone) {
@@ -38,23 +31,9 @@ public class PhoneServiceImpl implements IPhoneService {
 	}
 
 	@Override
-	public Phone update(Phone phone) {
-		validate(phone);
-		phoneDao.update(phone);
-		return phone;
-	}
-
-	@Override
 	public Phone findPhoneById(int id) {
 		validate(id);
 		Phone phone = phoneDao.findPhoneById(id);
-		return phone;
-	}
-
-	@Override
-	public Phone findPhoneByName(String pname) {
-		Phone phone = phoneDao.findPhoneByName(pname);
-		validate(phone);
 		return phone;
 	}
 

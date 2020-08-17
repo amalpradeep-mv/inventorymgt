@@ -16,16 +16,9 @@ public class ItemServiceImpl implements IItemService {
 	private IItemDao itemDao;
 
 	@Override
-	public void validate(Item item) {
-		if (item == null) {
-			throw new ItemNotFoundException("Item is not found");
-		}
-	}
-
-	@Override
-	public void validate(int id) {
-		if (id == 0) {
-			throw new InvalidArgumentException("Id is not found");
+	public void validate(Object arg) {
+		if (arg == null) {
+			throw new InvalidArgumentException("Argument is null");
 		}
 	}
 
@@ -37,23 +30,9 @@ public class ItemServiceImpl implements IItemService {
 	}
 
 	@Override
-	public Item update(Item item) {
-		validate(item);
-		itemDao.update(item);
-		return item;
-	}
-
-	@Override
 	public Item findItemById(int id) {
 		validate(id);
 		Item item = itemDao.findItemById(id);
-		return item;
-	}
-
-	@Override
-	public Item findItemByName(String iname) {
-		Item item = itemDao.findItemByName(iname);
-		validate(item);
 		return item;
 	}
 

@@ -45,13 +45,14 @@ public class Supplier {
 	}
 	
 
-	public Set<Item> getItem() {
+/*	public Set<Item> getItem() {
 		return item;
 	}
 
 	public void setItem(Set<Item> item) {
 		this.item = item;
 	}
+*/
 
 	@Override
 	public int hashCode() {
@@ -63,7 +64,7 @@ public class Supplier {
 		if (this == obj) {
 			return true;
 	}
-		if (getClass() != obj.getClass()) {
+		if (obj==null || getClass()!= obj.getClass()) {
 			return false;
 		}
 		Supplier that = (Supplier) obj;

@@ -6,11 +6,7 @@ public interface ISupplierDao {
 	
 	Supplier save(Supplier supplier);
 
-	Supplier update(Supplier supplier);
-
 	Supplier findSupplierById(int id);
-
-	Supplier findSupplierByName(String aname);
 
 	Supplier remove(int id);
 }

@@ -1,22 +1,14 @@
 package com.dxctraining.inventorymgt.sprint1_supplier.service;
 
-import java.util.List;
-
 import com.dxctraining.inventorymgt.sprint1_supplier.entities.Supplier;
 
 public interface ISupplierService {
 
-	void validate(int id);
-
-	void validate(Supplier supplier);
+	void validate(Object obj);
 
 	Supplier save(Supplier supplier);
 
-	Supplier update(Supplier supplier);
-
 	Supplier findSupplierById(int id);
-
-	Supplier findSupplierByName(String aname);
 
 	Supplier remove(int id);
 
