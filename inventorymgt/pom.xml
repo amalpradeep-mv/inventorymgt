@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dxctraining</groupId>
-	<artifactId>librarymgt_bootconsole</artifactId>
+	<artifactId>inventorymgt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>librarymgt app</name>
+	<name>inventorymgt app</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

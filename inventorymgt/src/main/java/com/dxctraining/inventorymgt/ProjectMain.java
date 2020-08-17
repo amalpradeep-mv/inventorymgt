@@ -1,4 +1,4 @@
-package com.dxctraining.bootconsoleapp;
+package com.dxctraining.inventorymgt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

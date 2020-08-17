@@ -1,4 +1,4 @@
-package com.dxctraining.bootconsoleapp.exception;
+package com.dxctraining.inventorymgt.exception;
 
 public class InvalidArgumentException extends RuntimeException {
 
