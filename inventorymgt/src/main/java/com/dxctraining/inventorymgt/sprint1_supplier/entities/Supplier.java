@@ -1,9 +1,14 @@
 package com.dxctraining.inventorymgt.sprint1_supplier.entities;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.dxctraining.inventorymgt.sprint2_item.entities.Item;
 
 @Entity
 @Table(name="supplier_details")
@@ -13,6 +18,9 @@ public class Supplier {
 	@GeneratedValue
 	private int id;
 	private String name;
+	
+	@OneToMany(mappedBy ="supplier")
+	private Set<Item> item;
 	
 	public Supplier() {}
 	
@@ -34,6 +42,15 @@ public class Supplier {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+
+	public Set<Item> getItem() {
+		return item;
+	}
+
+	public void setItem(Set<Item> item) {
+		this.item = item;
 	}
 
 	@Override

@@ -1,5 +1,7 @@
 package com.dxctraining.inventorymgt.sprint1_supplier.service;
 
+import java.util.List;
+
 import com.dxctraining.inventorymgt.sprint1_supplier.entities.Supplier;
 
 public interface ISupplierService {

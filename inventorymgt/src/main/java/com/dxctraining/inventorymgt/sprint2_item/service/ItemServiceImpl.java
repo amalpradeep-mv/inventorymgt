@@ -53,6 +53,7 @@ public class ItemServiceImpl implements IItemService {
 	@Override
 	public Item findItemByName(String iname) {
 		Item item = itemDao.findItemByName(iname);
+		validate(item);
 		return item;
 	}
 
