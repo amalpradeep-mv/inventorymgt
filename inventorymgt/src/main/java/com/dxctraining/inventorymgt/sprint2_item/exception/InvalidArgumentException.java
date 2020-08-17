@@ -1,4 +1,4 @@
-package com.dxctraining.inventorymgt.exception;
+package com.dxctraining.inventorymgt.sprint2_item.exception;
 
 public class InvalidArgumentException extends RuntimeException {
 

@@ -1,12 +1,12 @@
-package com.dxctraining.inventorymgt.supplier.service;
+package com.dxctraining.inventorymgt.sprint1_supplier.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dxctraining.inventorymgt.exception.*;
-import com.dxctraining.inventorymgt.supplier.dao.ISupplierDao;
-import com.dxctraining.inventorymgt.supplier.entities.Supplier;
+import com.dxctraining.inventorymgt.sprint1_supplier.dao.*;
+import com.dxctraining.inventorymgt.sprint1_supplier.entities.*;
+import com.dxctraining.inventorymgt.sprint1_supplier.exception.*;
 
 @Transactional
 @Service

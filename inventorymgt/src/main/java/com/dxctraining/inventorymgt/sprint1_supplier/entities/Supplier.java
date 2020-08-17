@@ -1,4 +1,4 @@
-package com.dxctraining.inventorymgt.supplier.entities;
+package com.dxctraining.inventorymgt.sprint1_supplier.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

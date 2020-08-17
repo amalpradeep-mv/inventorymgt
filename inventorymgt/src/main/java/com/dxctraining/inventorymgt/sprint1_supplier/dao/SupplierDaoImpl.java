@@ -1,4 +1,4 @@
-package com.dxctraining.inventorymgt.supplier.dao;
+package com.dxctraining.inventorymgt.sprint1_supplier.dao;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
-import com.dxctraining.inventorymgt.exception.SupplierNotFoundException;
-import com.dxctraining.inventorymgt.supplier.entities.Supplier;
+import com.dxctraining.inventorymgt.sprint1_supplier.entities.Supplier;
+import com.dxctraining.inventorymgt.sprint1_supplier.exception.*;
 
 @Repository
 public class SupplierDaoImpl implements ISupplierDao {
@@ -16,6 +16,7 @@ public class SupplierDaoImpl implements ISupplierDao {
 	@PersistenceContext
 	private EntityManager em;
 
+	
 	@Override
 	public Supplier save(Supplier supplier) {
 		em.persist(supplier);
@@ -57,5 +58,7 @@ public class SupplierDaoImpl implements ISupplierDao {
 		em.remove(supplier);
 		return supplier;
 	}
+
+	
 
 }

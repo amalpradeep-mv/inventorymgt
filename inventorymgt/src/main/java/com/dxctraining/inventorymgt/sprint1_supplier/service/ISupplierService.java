@@ -1,6 +1,6 @@
-package com.dxctraining.inventorymgt.supplier.service;
+package com.dxctraining.inventorymgt.sprint1_supplier.service;
 
-import com.dxctraining.inventorymgt.supplier.entities.Supplier;
+import com.dxctraining.inventorymgt.sprint1_supplier.entities.Supplier;
 
 public interface ISupplierService {
 

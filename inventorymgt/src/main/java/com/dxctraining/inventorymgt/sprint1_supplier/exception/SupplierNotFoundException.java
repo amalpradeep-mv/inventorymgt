@@ -1,4 +1,4 @@
-package com.dxctraining.inventorymgt.exception;
+package com.dxctraining.inventorymgt.sprint1_supplier.exception;
 
 public class SupplierNotFoundException extends RuntimeException{
 
