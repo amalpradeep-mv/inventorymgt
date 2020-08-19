@@ -1,4 +1,4 @@
-package com.dxctraining.inventorymgt_mvc.sprint6_supplier.entiites;
+package com.dxctraining.inventorymgt_mvc.sprint6_supplier.entities;
 
 import java.util.Set;
 

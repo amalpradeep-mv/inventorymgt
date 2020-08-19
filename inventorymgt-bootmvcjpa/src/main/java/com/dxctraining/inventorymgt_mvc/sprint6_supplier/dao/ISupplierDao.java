@@ -1,6 +1,8 @@
 package com.dxctraining.inventorymgt_mvc.sprint6_supplier.dao;
 
-import com.dxctraining.inventorymgt_mvc.sprint6_supplier.entiites.Supplier;
+import java.util.List;
+
+import com.dxctraining.inventorymgt_mvc.sprint6_supplier.entities.Supplier;
 
 public interface ISupplierDao {
 	
@@ -9,4 +11,6 @@ public interface ISupplierDao {
 	Supplier findSupplierById(int id);
 
 	Supplier remove(int id);
+
+	List<Supplier> allSuppliers();
 }
