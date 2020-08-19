@@ -22,7 +22,6 @@ public class ControllerUi {
 	private ISupplierService supplierService;
 
 	@Autowired
-
 	private IItemService itemService;
 
 	@PostConstruct
