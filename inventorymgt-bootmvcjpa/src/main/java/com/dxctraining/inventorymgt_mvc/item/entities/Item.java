@@ -8,7 +8,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.dxctraining.inventorymgt_mvc.sprint6_supplier.entities.Supplier;
+import com.dxctraining.inventorymgt_mvc.supplier.entities.Supplier;
 
 
 @Entity
