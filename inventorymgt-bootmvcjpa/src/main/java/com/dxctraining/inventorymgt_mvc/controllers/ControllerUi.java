@@ -14,6 +14,8 @@ import com.dxctraining.inventorymgt_mvc.sprint6_supplier.entities.Supplier;
 import com.dxctraining.inventorymgt_mvc.sprint6_supplier.service.ISupplierService;
 import com.dxctraining.inventorymgt_mvc.sprint7_phone.entities.Phone;
 import com.dxctraining.inventorymgt_mvc.sprint7_phone.service.IPhoneService;
+import com.dxctraining.inventorymgt_mvc.sprint8_computer.entities.Computer;
+import com.dxctraining.inventorymgt_mvc.sprint8_computer.service.IComputerService;
 
 @Controller
 public class ControllerUi {
@@ -23,6 +25,9 @@ public class ControllerUi {
 
 	@Autowired
 	private IPhoneService phoneService;
+
+	@Autowired
+	private IComputerService compService;
 
 	@PostConstruct
 	public void init() {
@@ -35,15 +40,21 @@ public class ControllerUi {
 		int id2 = supplier1.getId();
 		supplier2 = supplierService.save(supplier2);
 
-		System.out.println("---Sprint 1 completed---");
+		System.out.println("---Sprint 6 completed---");
 
 		Phone phone1 = new Phone("Samsung A30", supplier1, 32);
 		phone1 = phoneService.save(phone1);
 		Phone phone2 = new Phone("Honor 9 Lite", supplier2, 32);
 		phone1 = phoneService.save(phone2);
 
-		System.out.println("---Sprint 3 completed---");
+		System.out.println("---Sprint 7 completed---");
 
+		Computer comp1 = new Computer("HP Elitebook 765", supplier1, 228);
+		comp1 = compService.save(comp1);
+		Computer comp2 = new Computer("Acer Nitro 5", supplier2, 228);
+		comp2 = compService.save(comp2);
+
+		System.out.println("---Sprint 8 completed---");
 	}
 
 	@GetMapping("/supplier")
@@ -67,4 +78,10 @@ public class ControllerUi {
 		return modelAndView;
 	}
 
+	@GetMapping("/allcomputers")
+	public ModelAndView allComputers() {
+		List<Computer> values = compService.allComputers();
+		ModelAndView modelAndView = new ModelAndView("clist", "computers", values);
+		return modelAndView;
+	}
 }
