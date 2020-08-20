@@ -18,5 +18,8 @@ name is <c:out value="${supplier.name}"  />
 id is <c:out value="${supplier.id}"  />
 <br>
 
+
+<a href="/logout"> Log out </a>
+
 </body>
 </html>

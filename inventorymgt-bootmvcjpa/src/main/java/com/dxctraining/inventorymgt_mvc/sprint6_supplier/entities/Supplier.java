@@ -5,10 +5,8 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.dxctraining.inventorymgt_mvc.item.entities.Item;
 
 @Entity
 @Table(name = "supplier_details")
@@ -18,12 +16,15 @@ public class Supplier {
 	@GeneratedValue
 	private int id;
 	private String name;
+	private String password;
 
 	public Supplier() {
 	}
 
-	public Supplier(String name) {
+	public Supplier(String name, String password) {
 		this.name = name;
+		this.password=password;
+		
 	}
 
 	public int getId() {
@@ -58,6 +59,14 @@ public class Supplier {
 		}
 		Supplier that = (Supplier) obj;
 		return this.id == that.id;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

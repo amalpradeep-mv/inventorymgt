@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dxctraining.inventorymgt_mvc.sprint6_supplier.dto.SessionData;
 import com.dxctraining.inventorymgt_mvc.sprint6_supplier.entities.Supplier;
 import com.dxctraining.inventorymgt_mvc.sprint6_supplier.service.ISupplierService;
 import com.dxctraining.inventorymgt_mvc.sprint7_phone.entities.Phone;
@@ -29,14 +30,17 @@ public class ControllerUi {
 	@Autowired
 	private IComputerService compService;
 
+	@Autowired
+	private SessionData sessionData;
+
 	@PostConstruct
 	public void init() {
 
-		Supplier supplier1 = new Supplier("John");
+		Supplier supplier1 = new Supplier("John", "qwerty");
 		int id1 = supplier1.getId();
 		supplier1 = supplierService.save(supplier1);
 
-		Supplier supplier2 = new Supplier("Sam");
+		Supplier supplier2 = new Supplier("Sam", "qwerty");
 		int id2 = supplier1.getId();
 		supplier2 = supplierService.save(supplier2);
 
@@ -57,7 +61,7 @@ public class ControllerUi {
 		System.out.println("---Sprint 8 completed---");
 
 		System.out.println("---Sprint 9 completed---");
-		
+
 		System.out.println("---Sprint 10 completed---");
 
 	}
@@ -97,9 +101,9 @@ public class ControllerUi {
 	}
 
 	@GetMapping("/processregister")
-	public ModelAndView processRegister(@RequestParam("name") String name) {
+	public ModelAndView processRegister(@RequestParam("name") String name, @RequestParam("password") String password) {
 		System.out.println("inside processregister method, name=" + name);
-		Supplier supplier = new Supplier(name);
+		Supplier supplier = new Supplier(name, password);
 		supplier = supplierService.save(supplier);
 		ModelAndView mv = new ModelAndView("details", "supplier", supplier);
 		return mv;
@@ -112,17 +116,23 @@ public class ControllerUi {
 	}
 
 	@GetMapping("/processlogin")
-	public ModelAndView processLogin(@RequestParam("name") String name, @RequestParam("id") int id) {
+	public ModelAndView processLogin( @RequestParam("id") int id, @RequestParam("password") String password) {
+		boolean correct = supplierService.authenticate(id, password);
+		if (!correct) {
+			ModelAndView modelAndView = new ModelAndView("login");
+			return modelAndView;
+		}
+		sessionData.saveLogin(id);
 		Supplier supplier = supplierService.findSupplierById(id);
 		ModelAndView mv = new ModelAndView("details", "supplier", supplier);
 		return mv;
 	}
-	
-/*	@GetMapping("/logout")
+
+	@GetMapping("/logout")
 	public ModelAndView logout() {
-		ModelAndView mv=new ModelAndView("login");
+		sessionData.clear();
+		ModelAndView mv = new ModelAndView("login");
 		return mv;
 	}
-	*/
-}
 
+}
