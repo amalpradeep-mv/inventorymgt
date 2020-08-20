@@ -16,7 +16,7 @@ import com.dxctraining.inventorymgt_mvc.sprint7_phone.entities.Phone;
 import com.dxctraining.inventorymgt_mvc.sprint7_phone.service.IPhoneService;
 
 @Controller
-public class SupplierController {
+public class ControllerUi {
 
 	@Autowired
 	private ISupplierService supplierService;
