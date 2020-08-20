@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.dxctraining.inventorymgt_mvc.sprint6_supplier.dao.*;
 import com.dxctraining.inventorymgt_mvc.sprint6_supplier.entities.*;
-import com.dxctraining.inventorymgt_mvc.sprint6_supplier.exception.*;
+import com.dxctraining.inventorymgt_mvc.exception.*;
 
 @Transactional
 @Service

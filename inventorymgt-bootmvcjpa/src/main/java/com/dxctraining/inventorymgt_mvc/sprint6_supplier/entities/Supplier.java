@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.dxctraining.inventorymgt_mvc.sprint7_item.entities.Item;
+import com.dxctraining.inventorymgt_mvc.item.entities.Item;
 
 @Entity
 @Table(name = "supplier_details")

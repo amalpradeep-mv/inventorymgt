@@ -9,7 +9,7 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 
 import com.dxctraining.inventorymgt_mvc.sprint6_supplier.entities.Supplier;
-import com.dxctraining.inventorymgt_mvc.sprint6_supplier.exception.*;
+import com.dxctraining.inventorymgt_mvc.exception.*;
 
 @Repository
 public class SupplierDaoImpl implements ISupplierDao {
