@@ -43,7 +43,7 @@ public class ControllerUi {
 	@GetMapping("/listall")
 	public ModelAndView all() {
 		List<Supplier> values = supplierService.allSuppliers();
-		ModelAndView modelAndView = new ModelAndView("list", "supplier", values);
+		ModelAndView modelAndView = new ModelAndView("list", "suppliers", values);
 		return modelAndView;
 	}
 }
