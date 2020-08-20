@@ -12,17 +12,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.dxctraining.inventorymgt_mvc.sprint6_supplier.entities.Supplier;
 import com.dxctraining.inventorymgt_mvc.sprint6_supplier.service.ISupplierService;
-import com.dxctraining.inventorymgt_mvc.sprint7_item.entities.Item;
-import com.dxctraining.inventorymgt_mvc.sprint7_item.service.IItemService;
-
 @Controller
 public class ControllerUi {
 
 	@Autowired
 	private ISupplierService supplierService;
-
-	@Autowired
-	private IItemService itemService;
 
 	@PostConstruct
 	public void init() {
@@ -37,25 +31,19 @@ public class ControllerUi {
 
 		System.out.println("---Sprint 1 completed---");
 
-		Item item1 = new Item("Head Set", supplier1);
-		item1 = itemService.save(item1);
-		Item item2 = new Item("Charger", supplier2);
-		item2 = itemService.save(item2);
-
-		System.out.println("---Sprint 2 completed---");
 	}
 
 	@GetMapping("/supplier")
 	public ModelAndView supplierDetails(@RequestParam("id") int id) {
 		Supplier supplier = supplierService.findSupplierById(id);
-		ModelAndView modelAndView = new ModelAndView("sdetails", "supplier", supplier);
+		ModelAndView modelAndView = new ModelAndView("details", "supplier", supplier);
 		return modelAndView;
 	}
 
-	@GetMapping("/item")
-	public ModelAndView itemDetails(@RequestParam("id") int id) {
-		Item item = itemService.findItemById(id);
-		ModelAndView modelAndView = new ModelAndView("idetails", "item", item);
+	@GetMapping("/listall")
+	public ModelAndView all() {
+		List<Supplier> values = supplierService.allSuppliers();
+		ModelAndView modelAndView = new ModelAndView("list", "supplier", values);
 		return modelAndView;
 	}
 }
