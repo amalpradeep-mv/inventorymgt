@@ -55,6 +55,11 @@ public class ControllerUi {
 		comp2 = compService.save(comp2);
 
 		System.out.println("---Sprint 8 completed---");
+
+		System.out.println("---Sprint 9 completed---");
+		
+		System.out.println("---Sprint 10 completed---");
+
 	}
 
 	@GetMapping("/supplier")
@@ -84,4 +89,40 @@ public class ControllerUi {
 		ModelAndView modelAndView = new ModelAndView("clist", "computers", values);
 		return modelAndView;
 	}
+
+	@GetMapping("/register")
+	public ModelAndView registerSupplier() {
+		ModelAndView mv = new ModelAndView("register");
+		return mv;
+	}
+
+	@GetMapping("/processregister")
+	public ModelAndView processRegister(@RequestParam("name") String name) {
+		System.out.println("inside processregister method, name=" + name);
+		Supplier supplier = new Supplier(name);
+		supplier = supplierService.save(supplier);
+		ModelAndView mv = new ModelAndView("details", "supplier", supplier);
+		return mv;
+	}
+
+	@GetMapping("/login")
+	public ModelAndView login() {
+		ModelAndView mv = new ModelAndView("login");
+		return mv;
+	}
+
+	@GetMapping("/processlogin")
+	public ModelAndView processLogin(@RequestParam("name") String name, @RequestParam("id") int id) {
+		Supplier supplier = supplierService.findSupplierById(id);
+		ModelAndView mv = new ModelAndView("details", "supplier", supplier);
+		return mv;
+	}
+	
+/*	@GetMapping("/logout")
+	public ModelAndView logout() {
+		ModelAndView mv=new ModelAndView("login");
+		return mv;
+	}
+	*/
 }
+
