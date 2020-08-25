@@ -51,4 +51,11 @@ public class SupplierServiceImpl implements ISupplierService {
 		return supplierDao.remove(id);
 
 	}
+	@Override
+	public boolean authenticate(int id, String password) {
+		Supplier supplier=supplierDao.findSupplierById(id);
+		String str=supplier.getPassword();
+		boolean equals=str.equals(password);
+		return equals;
+	}
 }
