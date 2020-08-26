@@ -19,7 +19,5 @@ public interface IPhoneService {
 	
 	List<Phone> allPhones();
 	
-	boolean authenticate(int id);
-	
 	List<Phone> allPhonesBySupplier(int supplierId);
 }

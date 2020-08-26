@@ -18,8 +18,6 @@ public interface IComputerService {
 
 	Computer update(Computer computer);
 
-	boolean authenticate(int id);
-
 	List<Computer> allComputersBySupplier(int supplierId);
 
 }

@@ -53,12 +53,6 @@ public class ComputerServiceImpl implements IComputerService {
 	}
 
 	@Override
-	public boolean authenticate(int id) {
-		Computer computer = compDao.findComputerById(id);
-		return computer != null;
-	}
-
-	@Override
 	public List<Computer> allComputers() {
 		List<Computer> allcomputers = compDao.allComputers();
 		return allcomputers;

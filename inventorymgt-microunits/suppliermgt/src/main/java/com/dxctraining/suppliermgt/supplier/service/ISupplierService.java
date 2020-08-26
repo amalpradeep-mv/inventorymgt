@@ -14,6 +14,8 @@ public interface ISupplierService {
 
 	Supplier remove(int id);
 
+	boolean authenticate(int id, String password);
+
 	Supplier update(Supplier supplier);
 
 

@@ -41,6 +41,12 @@ public class SupplierController {
 		return response;
 	}
 
+ @GetMapping("/authenticate/{id}/{password}")
+    public boolean authenticate(@PathVariable("id") int id, @PathVariable("password") String password) {
+        boolean result = supplierService.authenticate(id, password);
+        return result;
+    }
+
 	public SupplierDto toDto(Supplier supplier) {
 		SupplierDto dto = new SupplierDto();
 		dto.setId(supplier.getId());

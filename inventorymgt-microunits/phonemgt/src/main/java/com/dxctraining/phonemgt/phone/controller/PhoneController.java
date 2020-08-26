@@ -75,12 +75,6 @@ public class PhoneController {
 		return response;
 	}
 
-	@GetMapping("/authenticate/{id}")
-	public boolean authenticate(@PathVariable("id") int id) {
-		boolean result = phoneService.authenticate(id);
-		return result;
-	}
-
 	public SupplierDto fetchFromSupplierById(int supplierId) {
 		String url = "http://localhost:8585/suppliers/get/" + supplierId;
 		SupplierDto dto = restTemplate.getForObject(url, SupplierDto.class);

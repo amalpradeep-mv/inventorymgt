@@ -59,12 +59,6 @@ public class PhoneServiceImpl implements IPhoneService {
 	}
 
 	@Override
-	public boolean authenticate(int id) {
-	Phone phone=phoneDao.findPhoneById(id);
-		return phone != null;
-	}
-
-	@Override
 	public List<Phone> allPhonesBySupplier(int supplierId) {
 		List<Phone>list=phoneDao.allPhonesBySupplier(supplierId);
 		return list;
