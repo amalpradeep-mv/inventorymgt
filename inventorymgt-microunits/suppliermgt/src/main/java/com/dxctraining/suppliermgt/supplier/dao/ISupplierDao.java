@@ -2,17 +2,13 @@ package com.dxctraining.suppliermgt.supplier.dao;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import com.dxctraining.suppliermgt.supplier.entities.Supplier;
 
-public interface ISupplierDao {
+public interface ISupplierDao extends JpaRepository<Supplier, Integer>{
 	
-	Supplier save(Supplier supplier);
 
-	Supplier findSupplierById(int id);
-
-	Supplier remove(int id);
-
-	Supplier update(Supplier supplier);
+	List<Supplier> findByName(String name);
 
 
 }

@@ -2,17 +2,25 @@ package com.dxctraining.suppliermgt.supplier.dto;
 
 public class SupplierDto {
 
-	private Integer id;
+	private int id;
 
 	private String name;
 
 	private String password;
 
-	public Integer getId() {
+	public SupplierDto() {}
+	
+	public SupplierDto(int id, String name, String password) {
+		this.id=id;
+		this.name=name;
+		this.password=password;
+	}
+	
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

@@ -6,17 +6,13 @@ import com.dxctraining.suppliermgt.supplier.entities.Supplier;
 
 public interface ISupplierService {
 
-	void validate(Object obj);
-
 	Supplier save(Supplier supplier);
 
-	Supplier findSupplierById(int id);
+	Supplier findById(int id);
 
-	Supplier remove(int id);
+	void remove(int id);
 
-	boolean authenticate(int id, String password);
+	List<Supplier> findAll();
 
-	Supplier update(Supplier supplier);
-
-
+	List<Supplier> findByName(String name);
 }

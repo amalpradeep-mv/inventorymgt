@@ -1,12 +1,13 @@
 package com.dxctraining.suppliermgt.supplier.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dxctraining.suppliermgt.exception.InvalidArgumentException;
+import com.dxctraining.suppliermgt.exception.SupplierNotFoundException;
 import com.dxctraining.suppliermgt.supplier.dao.*;
 import com.dxctraining.suppliermgt.supplier.entities.*;
 
@@ -15,47 +16,39 @@ import com.dxctraining.suppliermgt.supplier.entities.*;
 public class SupplierServiceImpl implements ISupplierService {
 
 	@Autowired
-	private ISupplierDao supplierDao;
-
-	@Override
-	public void validate(Object obj) {
-		if (obj == null) {
-			throw new InvalidArgumentException("Argument is null");
-		}
-	}
+	private ISupplierDao dao;
 
 	@Override
 	public Supplier save(Supplier supplier) {
-		validate(supplier);
-		supplierDao.save(supplier);
+		supplier = dao.save(supplier);
 		return supplier;
 	}
 
 	@Override
-	public Supplier findSupplierById(int id) {
-		validate(id);
-		Supplier supplier = supplierDao.findSupplierById(id);
+	public Supplier findById(int id) {
+		Optional<Supplier> optional = dao.findById(id);
+		if (!optional.isPresent()) {
+			throw new SupplierNotFoundException("supplier not found for id=" + id);
+		}
+		Supplier supplier = optional.get();
 		return supplier;
 	}
 
 	@Override
-	public Supplier update(Supplier supplier) {
-		validate(supplier);
-		supplier = supplierDao.update(supplier);
-		return supplier;
+	public void remove(int id) {
+		dao.deleteById(id);
 	}
 
 	@Override
-	public Supplier remove(int id) {
-		validate(id);
-		return supplierDao.remove(id);
-
+	public List<Supplier> findAll() {
+		List<Supplier> list = dao.findAll();
+		return list;
 	}
-@Override
-    public boolean authenticate(int id, String password){
-       Supplier supplier= supplierDao.findSupplierById(id);
-       String storedPassword=supplier.getPassword();
-       boolean equals= storedPassword.equals(password);
-       return equals;
-    }
+
+	@Override
+	public List<Supplier> findByName(String name) {
+		List<Supplier> list = dao.findByName(name);
+		return list;
+	}
+
 }
