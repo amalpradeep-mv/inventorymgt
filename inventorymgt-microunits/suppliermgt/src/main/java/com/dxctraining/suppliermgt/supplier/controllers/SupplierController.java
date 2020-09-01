@@ -42,7 +42,7 @@ public class SupplierController {
 
 	@GetMapping("/get/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public SupplierDto findSupplierBy(@PathVariable("id") int id) {
+	public SupplierDto findSupplierBy(@PathVariable("id") Integer id) {
 		Supplier supplier = supplierService.findById(id);
 		SupplierDto response = util.supplierDto(supplier);
 		return response;

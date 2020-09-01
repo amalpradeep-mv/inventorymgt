@@ -8,9 +8,9 @@ public interface ISupplierService {
 
 	Supplier save(Supplier supplier);
 
-	Supplier findById(int id);
+	Supplier findById(Integer id);
 
-	void remove(int id);
+	void remove(Integer id);
 
 	List<Supplier> findAll();
 

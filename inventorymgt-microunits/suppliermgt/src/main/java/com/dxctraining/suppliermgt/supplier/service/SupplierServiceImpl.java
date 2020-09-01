@@ -25,7 +25,7 @@ public class SupplierServiceImpl implements ISupplierService {
 	}
 
 	@Override
-	public Supplier findById(int id) {
+	public Supplier findById(Integer id) {
 		Optional<Supplier> optional = dao.findById(id);
 		if (!optional.isPresent()) {
 			throw new SupplierNotFoundException("supplier not found for id=" + id);
@@ -35,7 +35,7 @@ public class SupplierServiceImpl implements ISupplierService {
 	}
 
 	@Override
-	public void remove(int id) {
+	public void remove(Integer id) {
 		dao.deleteById(id);
 	}
 
