@@ -20,8 +20,13 @@
     </parent>
 
     <properties>
+<<<<<<< HEAD
          <java.version>1.8</java.version>
          <hsqldb.version>2.5.0</hsqldb.version>
+=======
+        <java.version>1.8</java.version>
+        <hsqldb.version>2.5.0</hsqldb.version>
+>>>>>>> f4703c4db5921870eeb2dea686eeb6c6223e94ae
     </properties>
 
     <dependencies>
